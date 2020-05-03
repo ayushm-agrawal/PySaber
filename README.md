@@ -16,4 +16,4 @@ Will be updated soon
 
 ## License
 
-This project has been given (MIT License)[https://github.com/git/git-scm.com/blob/master/MIT-LICENSE.txt]
+This project has been given [MIT License](https://github.com/git/git-scm.com/blob/master/MIT-LICENSE.txt)
