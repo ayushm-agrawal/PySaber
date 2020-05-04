@@ -1,2 +1,2 @@
 class CrossEntropyLoss():
-    pass
+    raise NotImplementedError
