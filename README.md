@@ -12,7 +12,9 @@ Will be updated soon
 
 ## Known Issues
 
-Will be updated soon
+Currently, the Loss functions are not implemented. We are using PyTorch Loss functions to test our network implementation of a Neural Network.
+
+More details can be found under this [#issue 5](https://github.com/ayushm-agrawal/PySaber/issues/5)
 
 ## License
 
