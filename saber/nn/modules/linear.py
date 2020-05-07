@@ -18,10 +18,11 @@ class Linear(Module):
         # Bounds for the uniform distribution are derived using Kaiming Initialization
 
         bound_range = np.sqrt((2/self.input))
-
-        return np.random.uniform(-bound_range, bound_range, self.output)
+        bias = np.random.uniform(-bound_range, bound_range, self.output)
+        return np.reshape(bias, (bias.shape[0], 1))
 
     def forward(self, input):
-        output = np.matmul(input, self.weights.T) + self.bias
-
+        print(input.shape, self.weights.T.shape, self.bias.shape)
+        # output = np.matmul(input, self.weights.T) + self.bias
+        output = np.dot(self.weights, input) + self.bias
         return output
