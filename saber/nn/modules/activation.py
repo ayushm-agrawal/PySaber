@@ -14,7 +14,7 @@ class ReLU(Module):
         super(ReLU, self).__init__()
 
     def forward(self, input):
-        return np.max(0, input)
+        return np.maximum(0, input)
 
 
 class Sigmoid(Module):
@@ -33,8 +33,4 @@ class Sigmoid(Module):
         super(Sigmoid, self).__init__()
 
     def forward(self, input):
-        return (1/(1+np.exp(-input)))
-
-
-class Leaky_ReLU(Module):
-    raise NotImplementedError
+        return 1/(1+np.exp(-input))
