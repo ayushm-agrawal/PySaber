@@ -1,4 +1,5 @@
 from .module import Module
+import numpy as np
 
 
 class NLLLoss(Module):
@@ -6,7 +7,7 @@ class NLLLoss(Module):
         super(NLLLoss, self).__init__()
 
     def forward(self, input, target):
-        # TODO: Implement this later
+        # TODO: NLLLoss is missing forward implementation
         pass
 
 
@@ -20,12 +21,26 @@ class CrossEntropyLoss(Module):
     where events have equal probability has a larger entropy.
 
     Args:
-        weight (Tensor, optional): 
+        input: Predicted outputs from the model: Shape (1, num_examples)
+        target: True labels for the dataset: Shape(1, num_examples)
     """
 
-    def __init__(self, ignore_index=-100):
+    def __init__(self):
         super(CrossEntropyLoss, self).__init__()
-        self.ignore_index = ignore_index
+        pass
 
     def forward(self, input, target):
-        raise NotImplementedError
+
+        num_examples = target.shape[1]
+
+        cost = - np.sum(np.multiply(target, np.log(input) +
+                                    np.multiply((1-target), np.log((1-input)))))
+
+        cost = cost/num_examples
+
+        # convert cost to a scalar
+        cost = np.squeeze(cost)
+
+        assert(cost.shape == ())
+
+        return cost

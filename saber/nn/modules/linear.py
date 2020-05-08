@@ -21,8 +21,7 @@ class Linear(Module):
         bias = np.random.uniform(-bound_range, bound_range, self.output)
         return np.reshape(bias, (bias.shape[0], 1))
 
-    def forward(self, input):
-        print(input.shape, self.weights.T.shape, self.bias.shape)
+    def forward(self, inputs):
         # output = np.matmul(input, self.weights.T) + self.bias
-        output = np.dot(self.weights, input) + self.bias
+        output = np.dot(self.weights, inputs) + self.bias
         return output
