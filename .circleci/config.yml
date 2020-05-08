@@ -4,8 +4,9 @@ orbs:
   python: circleci/python@0.2.1
 
 jobs:
-  dependencies:
-    executor: python/default
+  build:
+    docker:
+      - image: circleci/python:3.7.7-buster
     working_directory: ~/PySaber
     steps:
       - checkout
@@ -13,16 +14,10 @@ jobs:
       - python/install-deps
       - python/save-cache
       - run:
-          command: sudo pip install requirements.txt
-          name: Install Dependencies
-  build:
-    steps:
-      - run:
-          command: |
-            python ./tests/test.py test
+          command: python ./tests/test.py test
+          name: Tests
 
 workflows:
   main:
     jobs:
-      - dependencies
       - build
