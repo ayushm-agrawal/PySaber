@@ -1,6 +1,5 @@
-# PySaber
-
-<img src="/logos/pys.png" alt="Kitten" title="PySaber Logo" width="350" height="300" />
+![PySaber Logo](https://github.com/ayushm-agrawal/PySaber/blob/master/logos/pys_dark.png)
+--------------------------------------------------------------------------------
 
 [![CircleCI](https://circleci.com/gh/ayushm-agrawal/PySaber.svg?style=shield&circle-token=752edbe22ce37823fc18557ba748746fac72e9f4)](https://app.circleci.com/pipelines/github/ayushm-agrawal/PySaber)
 
