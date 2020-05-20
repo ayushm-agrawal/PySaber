@@ -1,4 +1,4 @@
-![PySaber Logo](https://github.com/ayushm-agrawal/PySaber/blob/master/logos/pys_dark.png)
+![PySaber Logo](https://github.com/ayushm-agrawal/PySaber/blob/master/utils/_static/logos/pys_dark.png)
 --------------------------------------------------------------------------------
 
 [![CircleCI](https://circleci.com/gh/ayushm-agrawal/PySaber.svg?style=shield&circle-token=752edbe22ce37823fc18557ba748746fac72e9f4)](https://app.circleci.com/pipelines/github/ayushm-agrawal/PySaber)
