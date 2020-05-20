@@ -16,6 +16,22 @@ class ReLU(Module):
     def forward(self, input):
         return np.maximum(0, input)
 
+    def backwards(self, dA, cache):
+        """
+        Implement back prop for a single ReLU unit.
+        Args:
+        dA -- post-activation gradient, of any shape
+        cache -- used to store output for back prop computation
+        """
+
+        dZ = np.array(dA, copy=True)
+
+        dZ[cache <= 0] = 0
+
+        assert (dZ.shape == cache.shape)
+
+        return dZ
+
 
 class Sigmoid(Module):
     """ Sigmoid Activation Function.
@@ -34,3 +50,16 @@ class Sigmoid(Module):
 
     def forward(self, input):
         return 1/(1+np.exp(-input))
+
+    def backwards(self, dA, cache):
+        """
+        Implement back prop for a single Sigmoid unit.
+        Args:
+        dA -- post-activation gradient, of any shape
+        cache -- used to store output for back prop computation
+        """
+        s = self.forward(cache)
+
+        dZ = dA * s * (1-s)
+
+        return dZ

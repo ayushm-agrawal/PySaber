@@ -20,6 +20,9 @@ class Module(object):
         # that use this module.
         raise NotImplementedError
 
+    def backwards(self, *inputs):
+        raise NotImplementedError
+
     def __call__(self, *inputs, **kwargs):
         """This allows the object to be callable.
         For example, you can define a model like follows
